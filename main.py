@@ -12,14 +12,19 @@ class Person:
 
 
 class Student(Person):
-    spec = 'Agrarnoe delo'
+    def __init__(self, name, surname, age, spec):
+        self.spec = spec
+        super().__init__(name, surname, age)
 
     def isSuccesful(self, mean_score):
         return True if mean_score > 75 else False
+
+    def __str__(self):
+        return f'{super().__str__()}\nSpec: {self.spec}'
 
 
 p1 = Person('Vasa', 'Pupkin', 33)
 print(p1)
 
 s1 = Student('Petya', 'Kopitov', 21)
-print(s1.isSuccesful(56))
+print(s1)

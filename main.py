@@ -39,16 +39,48 @@ class Student(Person):
     def __init__(self, name, surname, age, spec):
         self.__spec = spec
         super().__init__(name, surname, age)
+        self.__name = '75'
 
     def isSuccesful(self, mean_score):
         return True if mean_score > 75 else False
 
     def __str__(self):
+        self.__name
+        self.get_name()
         return f'{super().__str__()}\nSpec: {self.__spec}'
 
 
-p1 = Person('vAsA', 'Pupkin', 33)
-print(p1)
+# p1 = Person('vAsA', 'Pupkin', 33)
+# print(p1)
+#
+# s1 = Student('Petya', 'Kopitov', 21, 'Аграрное дело')
+# print(s1)
 
-s1 = Student('Petya', 'Kopitov', 21, 'Аграрное дело')
-print(s1)
+pricesUSD = [100, 35, 67.99, 25.5]
+print(pricesUSD)
+USDrate = 39.5
+
+# декорирующая функция
+def changePriceDecorator_v1(myFunction):
+    print("Hello! Let's change your prices...")
+
+    def simpleWrapper(argList):
+        print("I've got list of prices with {} elements.Function starts working...".format(len(argList)))
+        result = myFunction(argList)
+        resultwithDisc = list(map(lambda x: x * (1 - 0.15), result))
+        print("Let's set a discount..")
+        return resultwithDisc
+
+    return simpleWrapper
+
+# декорируем функцию
+@changePriceDecorator_v1
+def toPriceNew(priceList):
+    return list(map(lambda x: x * USDrate, priceList))
+
+
+print(toPriceNew(pricesUSD))
+#Создаем новую функцию с помощью декоратора и целевой функции
+pricesToVIPClients = changePriceDecorator_v1(toPriceNew)
+
+# print(pricesToGRN(pricesUSD))

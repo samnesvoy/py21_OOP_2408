@@ -56,13 +56,14 @@ class Student(Person):
 # s1 = Student('Petya', 'Kopitov', 21, 'Аграрное дело')
 # print(s1)
 
-pricesUSD = [100, 35, 67.99, 25.5]
-print(pricesUSD)
+# pricesUSD = [100, 35, 67.99, 25.5]
+# print(pricesUSD)
 USDrate = 39.5
+
 
 # декорирующая функция
 def changePriceDecorator_v1(myFunction):
-    print("Hello! Let's change your prices...")
+    # print("Hello! Let's change your prices...")
 
     def simpleWrapper(argList):
         print("I've got list of prices with {} elements.Function starts working...".format(len(argList)))
@@ -73,14 +74,52 @@ def changePriceDecorator_v1(myFunction):
 
     return simpleWrapper
 
+
 # декорируем функцию
 @changePriceDecorator_v1
 def toPriceNew(priceList):
     return list(map(lambda x: x * USDrate, priceList))
 
 
-print(toPriceNew(pricesUSD))
-#Создаем новую функцию с помощью декоратора и целевой функции
-pricesToVIPClients = changePriceDecorator_v1(toPriceNew)
+# print(toPriceNew(pricesUSD))
+# Создаем новую функцию с помощью декоратора и целевой функции
+# pricesToVIPClients = changePriceDecorator_v1(toPriceNew)
 
 # print(pricesToGRN(pricesUSD))
+
+# класс декоратор
+class Decorator:
+    def __init__(self, fn):
+        # декорируемая функция
+        self.fn = fn
+
+    def __call__(self, num1, num2):
+        # при вызове будет выполнятся декорируемая функция плюс что-то еще
+        return self.fn(num1, num2) ** 2
+
+
+# @Decorator
+def add_nums(num1, num2):
+    return num1 + num2
+
+
+@Decorator
+def add_nums1(num1, num2):
+    return num1 + num2
+
+
+def fu(x, y):
+    return x - y
+
+
+fufu = Decorator(fu)
+print(fufu(62, 7))
+
+print(add_nums(3, 5))
+
+newfun = Decorator(add_nums)
+print(newfun(4,2))
+
+
+
+print(pi*8)

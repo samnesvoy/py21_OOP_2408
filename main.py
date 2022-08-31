@@ -1,3 +1,6 @@
+import time
+
+
 class Person:
 
     def __init__(self, name, surname, age):
@@ -118,8 +121,12 @@ print(fufu(62, 7))
 print(add_nums(3, 5))
 
 newfun = Decorator(add_nums)
-print(newfun(4,2))
+print(newfun(4, 2))
+from time import time
 
-
-
-print(pi*8)
+print(time())
+start = time()
+for i in range(10000000):
+    a = i ** 2
+end = time()
+print(end-start)

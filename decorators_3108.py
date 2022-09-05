@@ -45,6 +45,9 @@ def range_change(fun):
 # print(res(3,277))
 # r=performance(simple_range)
 # r(3,567)
+a = []
+for i in range(30):
+    a.append(random.randrange(1000, 5000))
 
 income = [random.randrange(1000, 5000) for i in range(30)]
 consumption = [random.randrange(1000, 5000) for i in range(30)]
@@ -70,6 +73,7 @@ def month_report_all(fun):
 
     return decor
 
+
 @month_report_for_samiy_glavniy_director
 @month_report_all
 def month_report(income=income, consumption=consumption):
@@ -85,6 +89,30 @@ def month_report(income=income, consumption=consumption):
 
 # m = month_report_all(month_report)
 
-print(month_report())
+# print(month_report())
 # mm=month_report_for_samiy_glavniy_director(m)
 # print(mm())
+
+
+# декоратор - функция принимающая какой-то объект и возврааюая какой-то объект
+def dec(fu):
+    # d - создаем внутри функцию(объект) выполняющую любые нужнве нам операции,
+    # как правил дополняющие работу основной функции
+    def d():
+        print('dsfgedf')
+        fu()
+
+    # возвращаем новый объект
+    return d
+
+
+# рабочая функция (представим ее как изначальный объект)
+def fun():
+    print('fun')
+def fff():
+    pass
+
+ddd=dec(fff)
+
+# получим новую функцию обернув fun
+dec_fun = dec(fun)

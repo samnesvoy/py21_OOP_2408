@@ -1,5 +1,6 @@
-Ivasyk Bulkin trinolyatrulyalya Python11
-Ivasyk Bulkin trinolyatrulyalya Python11
-Ivasyk Bulkin trinolyatrulyalya Python11
-Ivasyk Bulkin trinolyatrulyalya Python11
-Ivasyk Bulkin trinolyatrulyalya Python11
+student Ivasyk Bulkin trinolyatrulyalya Python11
+student Grigoiy Terkin +387415874165 Python21
+student Anna Chechetkina +04478451235 C++14
+teacher Tatyana Stepanovna phone_number C++
+student Svetlana Bulkina trinolyatrulyalya2 Python11
+student Anatloiy Fedorov 0991234756 C++17

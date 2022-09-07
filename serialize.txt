@@ -1,0 +1,13 @@
+{
+  "name": "Vasiliy",
+  "id": 17,
+  "children": [
+    "Katrina",
+    "Zigfrid"
+  ],
+  "parents": {
+    "mother": "Antonina",
+    "father": "Julia"
+  },
+  "age": 43
+}

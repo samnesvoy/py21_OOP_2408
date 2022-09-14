@@ -95,3 +95,44 @@ class Queue_ring:
 
     def get_size(self):
         return self.__size
+
+
+class Queue_priority:
+    __data = list()
+    __priority = list()
+    __size = 0
+    __capacity = 0
+
+    def __init__(self, capacity: int):
+        if capacity > 0:
+            self.__capacity = capacity
+
+    def add(self, element: any, priority: int):
+        if self.__size < self.__capacity:
+            self.__data.append(element)
+            self.__priority.append(priority)
+            self.__size += 1
+        else:
+            print('переполнение/overflow')
+    # при выдавливании берется элемент с самым высоким приоритетом
+    def pop(self):
+        if self.__size > 0:
+            # ищем максимальное значение приоритета
+            max_priority = max(self.__priority)
+            # ищем индекс максимального значения приоритета
+            index_max_priority = self.__priority.index(max_priority)
+            # выдавливаем элемент с найденым индеском
+            popping = self.__data.pop(index_max_priority)
+            # удаляем приоритет из списка
+            self.__priority.pop(index_max_priority)
+            self.__size -= 1
+            return popping
+        else:
+            print('пусто/empty')
+            return None
+
+    def get_capacity(self):
+        return self.__capacity
+
+    def get_size(self):
+        return self.__size

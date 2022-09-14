@@ -18,12 +18,20 @@ import json
 # print(serialize_string)
 # print(di)
 #
-# with open('serialize.txt', 'w') as file:
-#     json.dump(di, file,indent=2)
+di=(567,)
+with open('serialize.txt', 'w') as file:
+    json.dump(di, file,indent=2)
 
 with open('serialize.txt','r') as file:
     dd=json.load(file)
 
 print(type(dd))
+# dumps - сериализация в строку
+# dump - сериализация в файл
+# loads - десериализация из строки
+# load - десериализация из файла
+# https://pythonworld.ru/moduli/modul-json.html
+# https://pythonworld.ru/moduli/modul-pickle.html
+
 
 

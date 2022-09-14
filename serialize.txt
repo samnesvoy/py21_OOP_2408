@@ -1,13 +1,37 @@
-{
-  "name": "Vasiliy",
-  "id": 17,
-  "children": [
-    "Katrina",
-    "Zigfrid"
-  ],
-  "parents": {
-    "mother": "Antonina",
-    "father": "Julia"
+[
+  {
+    "firstname": "\u041d\u0438\u043a\u043e\u043b\u0430\u0439",
+    "lastname": "\u041a\u043e\u0442\u043e\u0432\u0430\u0441\u0438\u043d",
+    "phone": "+380501234567",
+    "title": "Teacher",
+    "subject": "Python11"
   },
-  "age": 43
-}
+  {
+    "firstname": "\u041c\u0430\u043a\u0441\u0438\u043c",
+    "lastname": "\u0427\u0435\u0447\u0443\u0448\u043a\u043e\u0432",
+    "phone": "+387415874165",
+    "title": "Teacher",
+    "subject": "Python21"
+  },
+  {
+    "firstname": "\u0410\u043b\u0435\u0432\u0442\u0438\u043d\u0430",
+    "lastname": "\u0427\u0435\u0447\u0443\u0448\u043a\u043e\u0432\u0430",
+    "phone": "+44784512358",
+    "title": "Teacher",
+    "subject": "C++14"
+  },
+  {
+    "firstname": "\u0418\u043d\u043d\u0430",
+    "lastname": "\u041c\u043e\u0440\u043e\u0437",
+    "phone": "+380671234567",
+    "title": "Teacher",
+    "subject": "Python11"
+  },
+  {
+    "firstname": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439",
+    "lastname": "\u0421\u0435\u043c\u0438\u0445\u0432\u043e\u0441\u0442\u043e\u0432",
+    "phone": "+99123475611",
+    "title": "Teacher",
+    "subject": "C++17"
+  }
+]

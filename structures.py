@@ -18,7 +18,7 @@ class Stack:
 
     def pop(self):
         if self.__top > 0:
-            popping = self.__data.pop(self.__top)
+            popping = self.__data.pop(self.__top-1)
             self.__top -= 1
             return popping
         else:

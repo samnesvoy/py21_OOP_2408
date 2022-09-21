@@ -46,14 +46,29 @@ def price_nasdaq(emt):
     xPath = '//*[@id="quote-header-info"]/div[3]/div[1]/div/fin-streamer[1]/text()'
     response = requests.get(url)
 
-    # print(response.text)
+    # print(response)
     if response.status_code == 200:
         tree = html.fromstring(response.text)
         price = tree.xpath(xPath)
         print(f'{emt}: {price[0]}')
 
 
+names = ['NIO', 'GOOG', 'TSLA', 'KWEB', 'MOHO', 'AAPL', 'META', 'MSFT']
+start = time.perf_counter()
+for name in names:
+    price_nasdaq(name)
+end = time.perf_counter()
+print(f'time wthout threads = {end - start:0.2f}')
 
-price_nasdaq('NIO')
-price_nasdaq('GOOG')
-price_nasdaq('TSLA')
+start = time.perf_counter()
+threads = []
+for name in names:
+    t = Thread(target=price_nasdaq, args=(name,))
+    t.start()
+    threads.append(t)
+
+for t in threads:
+    t.join()
+
+end = time.perf_counter()
+print(f'time with threads = {end - start:0.2f}')
